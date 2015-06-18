@@ -3,7 +3,7 @@ Syntax Highlighting for SublimeText
 
 ![](https://leto21h.storage.yandex.net/rdisk/ba2874260630e3a93d2f9e2f85d90842af2bc4de368e9fb5b7aabf95eda95c9f/inf/f9LX--q8AvzANsoPK90KCkq6HKdoWKAz5oCEO2sJcBokNtdo2f4iuKc3PsG1PsPeYFediDpOOiaC5nZiGRUlMA==?uid=0&filename=2015-06-18%2014-43-50%20C%20%20Users%20vova%20.gitconfig%20-%20Sublime%20Text%202.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&tknv=v2&rtoken=b3a47b6091b952b1ec8f1bb701abb096&force_default=no)
 
-# Features
+## Features
 * Highlight all Git files (gitconfig, gitattributes, commit message, interactive rebase todo)
 * Toggle comments in all files above with default keystroke whatever it is (usually <kbd>ctrl+/</kbd>)
 * Many scopes, e.g. you can set separate colour for every command in rebase file (i.e. `pick`, `fixup`, etc.)
@@ -40,6 +40,24 @@ You also can hide menu (as on screenshot above) and tabs:
 
     editor = "sublime_text -n -w --command toggle_menu --command toggle_tabs"
 
+
+## SFAQ
+### Aren’t there similar packages for those syntaxes? Why another one? Why not contribute into existing one?
+I’ve [tried](https://github.com/adambullmer/sublime_git_commit_syntax/pull/1) with no luck, no any feedback.
+So this package is an attempt (the first one, in fact) to bring all related syntaxes in one place.
+
+### But what about Git, GitSavvy and many others?
+Those packages add integration in an IDE fashion — so you call git from-within Sublime Text.  
+This package does an opposite thing — make stuff more readable whenever you call ST from-within git, so ST remains an editor with extra features rather than IDE.
+
+### Are you interested in pull requests or collaboration in general?
+Sure, absolutely.
+
+### What is ‘s’ in SFAQ for?
+<b>S</b>upposedly frequently asked questions.
+
+### Do you even push-up?
+Nope.
 
 ## Credits
 * Base for Config definitions is borrowed from <https://github.com/textmate/git.tmbundle>
