@@ -1,0 +1,77 @@
+# [PackageDev] target_format: plist, ext: tmLanguage
+---
+name: Git Config
+scopeName: text.git.config
+fileTypes: [.git/config, git/config, .gitconfig, etc/gitconfig, .gitmodules, .gitattributes]
+uuid: 8c0801ac-9327-4672-b410-323e690f84a5
+
+patterns:
+- include: '#section'
+
+- include: '#comment'
+
+- include: '#attributes'
+
+repository:
+  comment:
+    match: ((#).*$\n?)|((;).*$\n?)
+    captures:
+      '1': {name: comment.line.number-sign.git-config}
+      '2': {name: punctuation.definition.comment.git-config}
+      '3': {name: comment.line.semi-colon.git-config}
+      '4': {name: punctuation.definition.comment.git-config}
+
+  boolean:
+    name: constant.language.boolean.git-config
+    match: \b(?i:yes|no|0|1|true|false)\b
+
+  section:
+    name: meta.section.git-config
+    begin: \[\s*([\w_-]+)(?:\s+((")(?:[^"\\]|\\["\\])*("))|\.([\w_-]+))?\s*\]
+    end: (?=\[)
+    captures:
+      '1': {name: entity.name.section.git-config}
+      '2': {name: string.name.section.subsection.git-config}
+      '3': {name: punctuation.definition.section.subsection.begin.git-config}
+      '4': {name: punctuation.definition.section.subsection.end.git-config}
+      '5': {name: entity.name.section.subsection.git-config}
+    patterns:
+    - include: '#value_pair'
+    - include: '#comment'
+
+  string:
+    name: string.quoted.double.git-config
+    begin: '"'
+    beginCaptures:
+      '0': {name: punctuation.definition.string.begin.git-config}
+    end: '"'
+    endCaptures:
+      '0': {name: punctuation.definition.string.end.git-config}
+    patterns:
+    - name: constant.character.escape.git-config
+      match: \\[ntb"\\]
+    - name: invalid.illegal.unknown-escape.git-config
+      match: \\.
+
+  value_pair:
+    name: meta.value-pair.section-item.git-config
+    begin: ([-\w]+)\s*(=)\s*(?!$)
+    end: $|(?=[#;])
+    captures:
+      '1': {name: key.support.constant.git-config}
+      '2': {name: keyword.operator.assignment.git-config}
+    patterns:
+    - name: constant.character.escape.git-config
+      match: \\[ntb"\\]
+    - include: '#boolean'
+    - include: '#string'
+    - include: '#comment'
+    - name: string.value.git-config
+      match: '[^\n]+'
+
+  attributes:
+    name: meta.attributes.git-config
+    begin: ^([\*\S]+)(?=(?!=)\s*(?!=)(\S+)($|(?=[#;])))
+    end: $|(?=[#;])
+    captures:
+      '1': {name: keyword.attributes-pattern.git-config}
