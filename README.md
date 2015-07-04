@@ -1,7 +1,7 @@
 # Git Syntaxes
 Syntax Highlighting for SublimeText
 
-![](https://leto21h.storage.yandex.net/rdisk/ba2874260630e3a93d2f9e2f85d90842af2bc4de368e9fb5b7aabf95eda95c9f/inf/f9LX--q8AvzANsoPK90KCkq6HKdoWKAz5oCEO2sJcBokNtdo2f4iuKc3PsG1PsPeYFediDpOOiaC5nZiGRUlMA==?uid=0&filename=2015-06-18%2014-43-50%20C%20%20Users%20vova%20.gitconfig%20-%20Sublime%20Text%202.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&tknv=v2&rtoken=b3a47b6091b952b1ec8f1bb701abb096&force_default=no)
+![](https://camo.githubusercontent.com/6bc71ab0aaf080e3e40faba31aac56bceb0b0d4a/68747470733a2f2f636c6f75642e67697468756275736572636f6e74656e742e636f6d2f6173736574732f313937353239382f383530383536392f34666135333433362d323239372d313165352d393638312d6435393663363539303265642e706e67)
 
 ## Features
 * Highlight all Git files (gitconfig, gitattributes, commit message, interactive rebase todo)
@@ -60,8 +60,8 @@ Sure, absolutely.
 Nope.
 
 ## Credits
+* Commit definitions are provided by [Josh Goebel](https://github.com/yyyc514)
 * Base for Config definitions is borrowed from <https://github.com/textmate/git.tmbundle>
-* Commit definitions are borrowed from <https://github.com/adambullmer/sublime_git_commit_syntax>
 
 <hr>
 
