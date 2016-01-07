@@ -26,13 +26,13 @@ patterns:
     '2': { name: 'entity' }
     '3': { name: invalid.deprecated.line-too-long.git-commit }
     '4': { name: invalid.illegal.line-too-long.git-commit }
-  end: (?=xxxxxx)123457
+  end: (?=^# \-+ \>8 \-+$)|(?=xxxxxx)123457
   patterns:
   - comment: capture the second line
     begin: ^(()|(.*\s*))$
     beginCaptures:
       '3': { name: invalid.illegal.line-too-long.git-commit }
-    end: (?=xxxxxx)123458
+    end: (?=^# \-+ \>8 \-+$)|(?=xxxxxx)123458
     patterns:
     - name: commit-text.git-commit
       match: ^(?:(?!#))((.{0,72})(.*))$\n?
