@@ -8,6 +8,24 @@ Syntax Highlighting for SublimeText
 * Toggle comments in all files above with default keystroke whatever it is (usually <kbd>ctrl+/</kbd>)
 * Many scopes, e.g. you can set separate colour for every command in rebase file (i.e. `pick`, `fixup`, etc.)
 
+## Customisation
+Sublime Text supports per-syntax settings, for instance, you may want to enable spell check whenever write commit message, or make a font size bigger, or maybe even use completely different colour scheme — all these possible.
+
+Create files:
+
+1. For commits `Packages/User/commit-message.sublime-settings`
+2. For rebase `Packages/User/rebase.sublime-settings`
+
+Content of those files:
+```json
+{
+    "spell_check": true,
+    "font_size": 22
+}
+```
+
+For available settings look at `Preferences` → `Settings — Default` (note, some settings are global and cannot be syntax-specific, e.g. `"font_options"`).
+
 ## How to use ST as editor for Git
 **Note** for Windows, you must have `Build 3065` or lated to have command line support, Or just add folder into `PATH` and call `sublime_text` instead of `subl`
 
