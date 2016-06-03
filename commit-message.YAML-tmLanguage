@@ -54,18 +54,26 @@ patterns:
     - name: comment.line.number-sign.git-commit
       match: (^#)\s*(modified:.*)$\n?
       captures:
-        '0': {name: markup.changed.git-commit}
         '1': {name: punctuation.definition.comment.git-commit}
+        '2': {name: markup.changed.git-commit}
+    - name: comment.line.number-sign.git-commit
+      match: (^#)\s*(renamed:)\s*(.*)\s*(->)\s*(.*)$\n?
+      captures:
+        '1': {name: punctuation.definition.comment.git-commit}
+        '2': {name: markup.changed.git-commit}
+        '3': {name: markup.deleted.git-commit}
+        '4': {name: markup.changed.git-commit}
+        '5': {name: markup.inserted.git-commit}
     - name: comment.line.number-sign.git-commit
       match: (^#)\s*(new file:.*)$\n?
       captures:
-        '0': {name: markup.inserted.git-commit}
         '1': {name: punctuation.definition.comment.git-commit}
+        '2': {name: markup.inserted.git-commit}
     - name: comment.line.number-sign.git-commit
       match: (^#)\s*(deleted:.*)$\n?
       captures:
-        '0': {name: markup.deleted.git-commit}
         '1': {name: punctuation.definition.comment.git-commit}
+        '2': {name: markup.deleted.git-commit}
     - name: comment.line.number-sign.git-commit
       match: ^\s*(#).*$\n?
       captures:
