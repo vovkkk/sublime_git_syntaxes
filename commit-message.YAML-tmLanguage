@@ -7,11 +7,11 @@ uuid: BFE83C06-8508-44BE-A975-95A57BF619A7
 patterns:
 - comment: "Comments don't count when looking for the 'first line' of a commit."
   name: comment.line.number-sign.git-commit
-  match: ^\s*(#).*$\n?
+  match: ^\s*([#|%]).*$\n?
   captures:
     '1': {name: punctuation.definition.comment.git-commit}
 
-- include: '#diff'
+- include: '[#|%]diff'
 
 - comment: Capture the whole commit message to test the length of the first line.
     NB the end pattern is just something to be never matched so the capture continues
@@ -26,38 +26,38 @@ patterns:
     '2': { name: 'entity' }
     '3': { name: invalid.deprecated.line-too-long.git-commit }
     '4': { name: invalid.illegal.line-too-long.git-commit }
-  end: (?=^# \-+ \>8 \-+$)|(?=xxxxxx)123457
+  end: (?=^[#|%] \-+ \>8 \-+$)|(?=xxxxxx)123457
   patterns:
   - comment: capture the second line
     begin: ^(()|(.*\s*))$
     beginCaptures:
       '3': { name: invalid.illegal.line-too-long.git-commit }
-    end: (?=^# \-+ \>8 \-+$)|(?=xxxxxx)123458
+    end: (?=^[#|%] \-+ \>8 \-+$)|(?=xxxxxx)123458
     patterns:
     - name: commit-text.git-commit
-      match: ^(?:(?!#))((.{0,72})(.*))$\n?
+      match: ^(?:(?![#|%]))((.{0,72})(.*))$\n?
       captures:
         '3': { name: invalid.illegal.line-too-long.git-commit }
         # '4': { name: invalid.illegal.line-too-long.git-commit }
     - name: comment.line.number-sign.git-commit
-      match: (^#)\sYour branch is up-to-date with '(.*)'.
+      match: (^[#|%])\sYour branch is up-to-date with '(.*)'.
       captures:
         '2': { name: constant.branch-name }
     - name: comment.line.number-sign.git-commit
-      match: (^#)\s(On branch\s)(.*)$\n?
+      match: (^[#|%])\s(On branch\s)(.*)$\n?
       captures:
         '3': { name: constant.branch-name }
     - name: comment.line.number-sign.git-commit
-      match: (^#)\s(.*:)$\n?
+      match: (^[#|%])\s(.*:)$\n?
       captures:
         '2': {name: punctuation.definition.comment.git-commit, name: storage}
     - name: comment.line.number-sign.git-commit
-      match: (^#)\s*(modified:.*)$\n?
+      match: (^[#|%])\s*(modified:.*)$\n?
       captures:
         '1': {name: punctuation.definition.comment.git-commit}
         '2': {name: markup.changed.git-commit}
     - name: comment.line.number-sign.git-commit
-      match: (^#)\s*(renamed:)\s*(.*)\s*(->)\s*(.*)$\n?
+      match: (^[#|%])\s*(renamed:)\s*(.*)\s*(->)\s*(.*)$\n?
       captures:
         '1': {name: punctuation.definition.comment.git-commit}
         '2': {name: markup.changed.git-commit}
@@ -65,20 +65,20 @@ patterns:
         '4': {name: markup.changed.git-commit}
         '5': {name: markup.inserted.git-commit}
     - name: comment.line.number-sign.git-commit
-      match: (^#)\s*(new file:.*)$\n?
+      match: (^[#|%])\s*(new file:.*)$\n?
       captures:
         '1': {name: punctuation.definition.comment.git-commit}
         '2': {name: markup.inserted.git-commit}
     - name: comment.line.number-sign.git-commit
-      match: (^#)\s*(deleted:.*)$\n?
+      match: (^[#|%])\s*(deleted:.*)$\n?
       captures:
         '1': {name: punctuation.definition.comment.git-commit}
         '2': {name: markup.deleted.git-commit}
     - name: comment.line.number-sign.git-commit
-      match: ^\s*(#).*$\n?
+      match: ^\s*([#|%]).*$\n?
       captures:
         '1': {name: punctuation.definition.comment.git-commit}
-    - include: '#diff'
+    - include: '[#|%]diff'
 
 repository:
   diff:

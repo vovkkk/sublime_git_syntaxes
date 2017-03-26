@@ -26,13 +26,13 @@
 			<key>comment</key>
 			<string>Comments don't count when looking for the 'first line' of a commit.</string>
 			<key>match</key>
-			<string>^\s*(#).*$\n?</string>
+			<string>^\s*([#|%]).*$\n?</string>
 			<key>name</key>
 			<string>comment.line.number-sign.git-commit</string>
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#diff</string>
+			<string>[#|%]diff</string>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -58,7 +58,7 @@
 			<key>comment</key>
 			<string>Capture the whole commit message to test the length of the first line. NB the end pattern is just something to be never matched so the capture continues until the end of the file.</string>
 			<key>end</key>
-			<string>(?=^# \-+ \&gt;8 \-+$)|(?=xxxxxx)123457</string>
+			<string>(?=^[#|%] \-+ \&gt;8 \-+$)|(?=xxxxxx)123457</string>
 			<key>name</key>
 			<string>first-line.git-commit</string>
 			<key>patterns</key>
@@ -77,7 +77,7 @@
 					<key>comment</key>
 					<string>capture the second line</string>
 					<key>end</key>
-					<string>(?=^# \-+ \&gt;8 \-+$)|(?=xxxxxx)123458</string>
+					<string>(?=^[#|%] \-+ \&gt;8 \-+$)|(?=xxxxxx)123458</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -90,7 +90,7 @@
 								</dict>
 							</dict>
 							<key>match</key>
-							<string>^(?:(?!#))((.{0,72})(.*))$\n?</string>
+							<string>^(?:(?![#|%]))((.{0,72})(.*))$\n?</string>
 							<key>name</key>
 							<string>commit-text.git-commit</string>
 						</dict>
@@ -104,7 +104,7 @@
 								</dict>
 							</dict>
 							<key>match</key>
-							<string>(^#)\sYour branch is up-to-date with '(.*)'.</string>
+							<string>(^[#|%])\sYour branch is up-to-date with '(.*)'.</string>
 							<key>name</key>
 							<string>comment.line.number-sign.git-commit</string>
 						</dict>
@@ -118,7 +118,7 @@
 								</dict>
 							</dict>
 							<key>match</key>
-							<string>(^#)\s(On branch\s)(.*)$\n?</string>
+							<string>(^[#|%])\s(On branch\s)(.*)$\n?</string>
 							<key>name</key>
 							<string>comment.line.number-sign.git-commit</string>
 						</dict>
@@ -132,7 +132,7 @@
 								</dict>
 							</dict>
 							<key>match</key>
-							<string>(^#)\s(.*:)$\n?</string>
+							<string>(^[#|%])\s(.*:)$\n?</string>
 							<key>name</key>
 							<string>comment.line.number-sign.git-commit</string>
 						</dict>
@@ -151,7 +151,7 @@
 								</dict>
 							</dict>
 							<key>match</key>
-							<string>(^#)\s*(modified:.*)$\n?</string>
+							<string>(^[#|%])\s*(modified:.*)$\n?</string>
 							<key>name</key>
 							<string>comment.line.number-sign.git-commit</string>
 						</dict>
@@ -185,7 +185,7 @@
 								</dict>
 							</dict>
 							<key>match</key>
-							<string>(^#)\s*(renamed:)\s*(.*)\s*(-&gt;)\s*(.*)$\n?</string>
+							<string>(^[#|%])\s*(renamed:)\s*(.*)\s*(-&gt;)\s*(.*)$\n?</string>
 							<key>name</key>
 							<string>comment.line.number-sign.git-commit</string>
 						</dict>
@@ -204,7 +204,7 @@
 								</dict>
 							</dict>
 							<key>match</key>
-							<string>(^#)\s*(new file:.*)$\n?</string>
+							<string>(^[#|%])\s*(new file:.*)$\n?</string>
 							<key>name</key>
 							<string>comment.line.number-sign.git-commit</string>
 						</dict>
@@ -223,7 +223,7 @@
 								</dict>
 							</dict>
 							<key>match</key>
-							<string>(^#)\s*(deleted:.*)$\n?</string>
+							<string>(^[#|%])\s*(deleted:.*)$\n?</string>
 							<key>name</key>
 							<string>comment.line.number-sign.git-commit</string>
 						</dict>
@@ -237,13 +237,13 @@
 								</dict>
 							</dict>
 							<key>match</key>
-							<string>^\s*(#).*$\n?</string>
+							<string>^\s*([#|%]).*$\n?</string>
 							<key>name</key>
 							<string>comment.line.number-sign.git-commit</string>
 						</dict>
 						<dict>
 							<key>include</key>
-							<string>#diff</string>
+							<string>[#|%]diff</string>
 						</dict>
 					</array>
 				</dict>
