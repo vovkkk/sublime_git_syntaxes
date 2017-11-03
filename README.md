@@ -5,7 +5,7 @@ Syntax Highlighting for SublimeText
 
 ## Features
 * Highlight all Git files (gitconfig, gitattributes, commit message, interactive rebase todo)
-* Toggle comments in all files above with default keystroke whatever it is (usually <kbd>ctrl+/</kbd>)
+* Toggle comments in all files above with default keystroke whatever it is (usually <kbd>ctrl</kbd> + <kbd>/</kbd>)
 * Many scopes, e.g. you can set separate colour for every command in rebase file (i.e. `pick`, `fixup`, etc.)
 
 ## Customisation
@@ -27,12 +27,12 @@ Content of those files:
 For available settings look at `Preferences` → `Settings — Default` (note, some settings are global and cannot be syntax-specific, e.g. `"font_options"`).
 
 ## How to use ST as editor for Git
-**Note** for Windows, you must have `Build 3065` or lated to have command line support, Or just add folder into `PATH` and call `sublime_text` instead of `subl`
+**Note** for Windows, you must have `Build 3065` or later to have command line support, or just add the folder into `PATH` and call `sublime_text` instead of `subl`
 
 - Mac / Linux: `subl -n -w`
 - Windows: `subl.exe -n -w`
 
-### Preferred Method: Edit `.bashrc`
+### Preferred method: edit `.bashrc`
 This will allow for more editing options than just the git commit, like editing diffs. This also leaves flexibility as it can be easily overridden, by the `.gitconfig` for example.
 Add the following to your `.bashrc`:
 On Mac and Linux:
@@ -41,7 +41,7 @@ On Mac and Linux:
 export EDITOR="subl -n -w"
 ```
 
-### Alternate Method: Ammend your `.gitconfig`
+### Alternate method: amend your `.gitconfig`
 You can run the following command to let git update your `.gitconfig`
 
 ```
@@ -61,7 +61,7 @@ You also can hide menu (as on screenshot above) and tabs:
 
 ## SFAQ
 ### Aren’t there similar packages for those syntaxes? Why another one? Why not contribute into existing one?
-I’ve [tried](https://github.com/adambullmer/sublime_git_commit_syntax/pull/1) with no luck, no any feedback.
+I’ve [tried](https://github.com/adambullmer/sublime_git_commit_syntax/pull/1) with no luck, or any feedback.
 So this package is an attempt (the first one, in fact) to bring all related syntaxes in one place.
 
 ### But what about Git, GitSavvy and many others?
